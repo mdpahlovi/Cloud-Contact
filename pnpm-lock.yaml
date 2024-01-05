@@ -11,6 +11,9 @@ dependencies:
   antd:
     specifier: ^5.12.8
     version: 5.12.8(react-dom@18.2.0)(react@18.2.0)
+  antd-img-crop:
+    specifier: ^4.21.0
+    version: 4.21.0(antd@5.12.8)(react-dom@18.2.0)(react@18.2.0)
   formik:
     specifier: ^2.4.5
     version: 2.4.5(react@18.2.0)
@@ -1180,6 +1183,21 @@ packages:
       color-convert: 2.0.1
     dev: true
 
+  /antd-img-crop@4.21.0(antd@5.12.8)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YA5GUMfwoDoSJNWinGOmtYFDFLf+t7Rhfg7ZusbHgFpKCq8n9W0005LeCWgSP4C0iK3vxNHAT3DaRa3rTgKFlQ==}
+    peerDependencies:
+      antd: '>=4.0.0'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      antd: 5.12.8(react-dom@18.2.0)(react@18.2.0)
+      compare-versions: 6.1.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-easy-crop: 5.0.4(react-dom@18.2.0)(react@18.2.0)
+      tslib: 2.6.2
+    dev: false
+
   /antd@5.12.8(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-R2CRcB+aaVZurb3J0IKpBRWq5kW4CLcSqDF58/QBsqYdzK7XjSvM8+eF3rWVRUDbSJfGmyW7I80ywNRYpW1+vA==}
     peerDependencies:
@@ -1343,6 +1361,10 @@ packages:
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
+
+  /compare-versions@6.1.0:
+    resolution: {integrity: sha512-LNZQXhqUvqUTotpZ00qLSaify3b4VFD588aRr8MKFw4CMUr98ytzCW5wDH5qx/DEY5kCDXcbcRuCqL0szEf2tg==}
+    dev: false
 
   /compute-scroll-into-view@3.1.0:
     resolution: {integrity: sha512-rj8l8pD4bJ1nx+dAkMhV1xB5RuZEyVysfxJqB1pRchh1KVvwOv9b7CGB8ZfjTImVv2oF+sYMUkMZq6Na5Ftmbg==}
@@ -1934,6 +1956,10 @@ packages:
   /node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
     dev: true
+
+  /normalize-wheel@1.0.1:
+    resolution: {integrity: sha512-1OnlAPZ3zgrk8B91HyRj+eVv+kS5u+Z0SCsak6Xil/kmgEia50ga7zfkumayonZrImffAxPU/5WcyGhzetHNPA==}
+    dev: false
 
   /once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -2558,6 +2584,18 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-easy-crop@5.0.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-JfzSk4cBHoksgAtgWUHR/jDYretebMxS0rpAlltP1LeELGMj4WTa420m4PsYFpgQXoJZV0DXmINUlBWAoAD/PQ==}
+    peerDependencies:
+      react: '>=16.4.0'
+      react-dom: '>=16.4.0'
+    dependencies:
+      normalize-wheel: 1.0.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tslib: 2.0.1
+    dev: false
+
   /react-fast-compare@2.0.4:
     resolution: {integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==}
     dev: false
@@ -2823,6 +2861,10 @@ packages:
     dependencies:
       typescript: 5.3.3
     dev: true
+
+  /tslib@2.0.1:
+    resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
+    dev: false
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
