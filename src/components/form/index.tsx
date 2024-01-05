@@ -6,7 +6,7 @@ export default function Form({ children, onSubmit, initialValues, validationSche
 
     return (
         <Formik {...config}>
-            <FormikForm style={{ display: "grid", gap: "1rem" }}>{children}</FormikForm>
+            <FormikForm style={{ display: "grid", gap: "0.5rem" }}>{children}</FormikForm>
         </Formik>
     );
 }

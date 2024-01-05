@@ -15,3 +15,8 @@ export interface FormInputProps {
     placeholder?: string;
     disabled?: boolean;
 }
+
+export interface FormSubmitProps {
+    loading?: boolean;
+    children: React.ReactNode;
+}

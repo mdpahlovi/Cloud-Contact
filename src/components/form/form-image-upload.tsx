@@ -1,16 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import ImgCrop from "antd-img-crop";
 import { Upload } from "antd";
-import type { RcFile, UploadFile, UploadProps } from "antd/es/upload/interface";
+import type { RcFile, UploadFile } from "antd/es/upload/interface";
 import { useField, useFormikContext } from "formik";
+import ErrorMassage from "./error-message";
 
-export default function FormImageUpload({ name, disabled }: { name: string; disabled?: boolean }) {
-    const [{ value }] = useField(name);
+export default function FormImageUpload({ name, label, disabled }: { name: string; label: string; disabled?: boolean }) {
+    const [{ value }, meta] = useField(name);
     const { setFieldValue } = useFormikContext();
+    const fileList: UploadFile<any>[] | undefined = value ? [{ uid: "-1", name: "image.png", status: "done", url: value }] : undefined;
 
-    const onChange: UploadProps["onChange"] = ({ fileList }) => {
-        const fileReader = new FileReader();
-        fileReader.onload = () => (fileReader.readyState === 2 ? setFieldValue(name, fileReader.result) : null);
-        fileReader.readAsDataURL(fileList[0] as unknown as Blob);
+    const onChange = ({ fileList }: { fileList: UploadFile[] }) => {
+        if (fileList[0]?.originFileObj) {
+            const fileReader = new FileReader();
+            fileReader.onload = () => setFieldValue(name, fileReader.result);
+            fileReader.readAsDataURL(fileList[0].originFileObj);
+        }
+    };
+
+    const onRemove = () => {
+        setFieldValue(name, "");
     };
 
     const onPreview = async (file: UploadFile) => {
@@ -29,17 +38,22 @@ export default function FormImageUpload({ name, disabled }: { name: string; disa
     };
 
     return (
-        <ImgCrop rotationSlider>
-            <Upload
-                listType="picture-card"
-                fileList={[{ uid: "-1", name: "image.png", status: "done", url: value }]}
-                onChange={onChange}
-                onPreview={onPreview}
-                maxCount={1}
-                disabled={disabled}
-            >
-                + Upload
-            </Upload>
-        </ImgCrop>
+        <div>
+            <ImgCrop rotationSlider>
+                <Upload
+                    listType="picture-card"
+                    fileList={fileList}
+                    beforeUpload={() => false}
+                    onPreview={onPreview}
+                    onRemove={onRemove}
+                    onChange={onChange}
+                    maxCount={1}
+                    disabled={disabled}
+                >
+                    + {label}
+                </Upload>
+            </ImgCrop>
+            <ErrorMassage meta={meta} />
+        </div>
     );
 }

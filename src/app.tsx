@@ -5,7 +5,7 @@ import { ConfigProvider, ThemeConfig } from "antd";
 function App() {
     const theme: ThemeConfig = {
         components: {
-            Layout: { headerBg: "#f5f5f5" },
+            Layout: { headerBg: "#f5f5f5", bodyBg: "#ffffff" },
             Menu: { itemBg: "#f5f5f5" },
         },
     };
