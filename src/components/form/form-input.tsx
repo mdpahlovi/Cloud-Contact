@@ -8,7 +8,7 @@ export default function FormInput({ type = "text", name, label, placeholder, dis
     const config: InputProps = { size: "large", type, ...field, placeholder, disabled };
 
     return (
-        <div>
+        <div style={{ marginBottom: "8px" }}>
             <Typography.Text>{label}</Typography.Text>
             {type === "password" ? <Input.Password {...config} /> : <Input {...config} />}
             <ErrorMassage meta={meta} />

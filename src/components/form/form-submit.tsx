@@ -7,7 +7,7 @@ export default function FormSubmit({ children, loading }: FormSubmitProps) {
     const hasError = Object.keys(errors).length !== 0;
 
     return (
-        <Button type="primary" size="large" style={{ marginTop: "8px" }} onClick={submitForm} loading={loading} disabled={hasError}>
+        <Button type="primary" size="large" style={{ marginTop: "8px" }} onClick={submitForm} loading={loading} disabled={hasError} block>
             {children}
         </Button>
     );

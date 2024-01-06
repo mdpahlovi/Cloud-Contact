@@ -41,6 +41,7 @@ export default function FormImageUpload({ name, label, disabled }: { name: strin
         <div>
             <ImgCrop rotationSlider>
                 <Upload
+                    accept="image/*"
                     listType="picture-card"
                     fileList={fileList}
                     beforeUpload={() => false}

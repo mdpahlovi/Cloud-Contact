@@ -4,6 +4,7 @@ import { ConfigProvider, ThemeConfig } from "antd";
 
 function App() {
     const theme: ThemeConfig = {
+        token: { colorPrimary: "#4E24AE" },
         components: {
             Layout: { headerBg: "#f5f5f5", bodyBg: "#ffffff" },
             Menu: { itemBg: "#f5f5f5" },

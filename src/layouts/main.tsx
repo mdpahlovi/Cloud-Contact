@@ -15,7 +15,7 @@ export default function Main() {
                 <Link to="/">
                     <Image width={100} src="/logo.png" />
                 </Link>
-                <Menu mode="horizontal" defaultSelectedKeys={["2"]} items={items} />
+                <Menu mode="horizontal" defaultSelectedKeys={["1"]} items={items} />
             </Header>
             <Content style={{ minHeight: "calc(100vh - 130.4px)", padding: "24px 50px" }}>
                 <Outlet />
