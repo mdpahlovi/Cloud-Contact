@@ -7,6 +7,7 @@ function App() {
         components: {
             Layout: { headerBg: "#f5f5f5", bodyBg: "#ffffff" },
             Menu: { itemBg: "#f5f5f5" },
+            Typography: { titleMarginBottom: "0px" },
         },
     };
 
