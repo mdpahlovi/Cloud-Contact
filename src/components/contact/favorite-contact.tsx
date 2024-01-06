@@ -1,4 +1,4 @@
-import { Contact } from "@/types/data";
+import { Contact, IGenericErrorResponse } from "@/types/data";
 import { useUpdateContactMutation } from "@/redux/features/contact/contactApi";
 import { message } from "antd";
 import { useEffect } from "react";
@@ -10,8 +10,7 @@ export default function FavoriteContact({ contact }: { contact: Contact }) {
 
     useEffect(() => {
         if (isError) {
-            console.log(error);
-            message.error(error.data.message as string);
+            message.error((error as IGenericErrorResponse).data.message);
         }
     }, [error, isError, isSuccess]);
 

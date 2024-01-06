@@ -5,7 +5,7 @@ import DeleteContact from "./delete-contact";
 import FavoriteContact from "./favorite-contact";
 
 export default function ContactCard({ contact }: { contact: Contact }) {
-    const { name, email, phone_number, address, profile_picture, is_favorite } = contact;
+    const { name, email, phone_number, address, profile_picture } = contact;
 
     return (
         <Card

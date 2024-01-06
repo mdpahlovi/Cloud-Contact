@@ -7,6 +7,7 @@ import FormSubmit from "@/components/form/form-submit";
 import { usePostContactMutation } from "@/redux/features/contact/contactApi";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { IGenericErrorResponse } from "@/types/data";
 
 const initialValues = { name: "", email: "", phone_number: "", address: "", profile_picture: "" };
 
@@ -19,8 +20,7 @@ export default function AddContact() {
             navigate("/");
             message.success("Contact Added Successfully");
         } else if (isError) {
-            console.log(error);
-            message.error(error.data.message as string);
+            message.error((error as IGenericErrorResponse).data.message);
         }
     }, [error, isError, isSuccess, navigate]);
 
