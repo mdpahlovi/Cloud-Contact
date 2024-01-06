@@ -30,3 +30,10 @@ Start the server
   npm run dev
 ```
 
+
+## Tech Stack
+
+**Client:** TypeScript, React, Redux Toolkit, Ant Design, React Router Dom, Formik, Yup
+
+**Server:** TypeScript, Node, Express, MongoDB, Mongoose, Zod, Cloudnary
+
