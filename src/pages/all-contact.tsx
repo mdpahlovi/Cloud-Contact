@@ -4,6 +4,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import { useSearchParams } from "react-router-dom";
 import ContactCard from "@/components/contact/contact-card";
 import ContactLoader from "@/components/contact/contact-loader";
+import ContactModal from "@/components/contact/contact-modal";
 
 export default function AllContact() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -24,12 +25,12 @@ export default function AllContact() {
             <Row style={{ justifyContent: "center" }} gutter={[20, 20]}>
                 {isLoading
                     ? [...Array(12)].map((_, idx) => (
-                          <Col key={idx} style={{ maxWidth: "320px" }} xs={24} sm={12} md={8} lg={6}>
+                          <Col key={idx} style={{ maxWidth: "384px" }} xs={24} sm={12} md={8} lg={6}>
                               <ContactLoader />
                           </Col>
                       ))
                     : data?.data?.map((contact, idx) => (
-                          <Col key={idx} style={{ maxWidth: "320px" }} xs={24} sm={12} md={8} lg={6}>
+                          <Col key={idx} style={{ maxWidth: "384px" }} xs={24} sm={12} md={8} lg={6}>
                               <ContactCard contact={contact} />
                           </Col>
                       ))}
@@ -41,6 +42,7 @@ export default function AllContact() {
                 onChange={(page) => setSearchParams({ page: page.toString() })}
                 style={{ marginTop: "24px", display: "flex", justifyContent: "center" }}
             />
+            <ContactModal />
         </>
     );
 }

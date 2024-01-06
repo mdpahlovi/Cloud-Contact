@@ -1,8 +1,9 @@
 import { api } from "./api/apiSlice";
 import { configureStore } from "@reduxjs/toolkit";
+import contactReducer from "@/redux/features/contact/contactSlice";
 
 const store = configureStore({
-    reducer: { [api.reducerPath]: api.reducer },
+    reducer: { contact_modal: contactReducer, [api.reducerPath]: api.reducer },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),
 });
 

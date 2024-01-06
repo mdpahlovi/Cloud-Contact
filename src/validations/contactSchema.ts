@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-const add_contact = yup.object().shape({
+const contactSchema = yup.object().shape({
     name: yup.string().required("Name is Required"),
     email: yup.string().email("Must Be Valid Email"),
     phone_number: yup.string().required("Phone Number is Required"),
@@ -8,4 +8,4 @@ const add_contact = yup.object().shape({
     profile_picture: yup.string().required("Profile Picture is Required"),
 });
 
-export default add_contact;
+export default contactSchema;

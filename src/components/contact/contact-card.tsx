@@ -1,8 +1,11 @@
+import { createElement } from "react";
 import { Contact } from "@/types/data";
 import { Avatar, Card, Typography } from "antd";
-import { EditOutlined } from "@ant-design/icons";
-import DeleteContact from "./delete-contact";
 import FavoriteContact from "./favorite-contact";
+import EditContact from "./edit-contact";
+import DeleteContact from "./delete-contact";
+
+const Actions = [FavoriteContact, EditContact, DeleteContact];
 
 export default function ContactCard({ contact }: { contact: Contact }) {
     const { name, email, phone_number, address, profile_picture } = contact;
@@ -10,7 +13,7 @@ export default function ContactCard({ contact }: { contact: Contact }) {
     return (
         <Card
             bodyStyle={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}
-            actions={[<FavoriteContact contact={contact} />, <EditOutlined />, <DeleteContact contact={contact} />]}
+            actions={Actions.map((action, key) => createElement(action, { key, contact }))}
         >
             <Avatar size={64} src={profile_picture} />
             <Typography.Title level={4} style={{ marginTop: "10px" }}>
